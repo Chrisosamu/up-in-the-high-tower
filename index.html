@@ -92,7 +92,13 @@ function playSoundForSpeaker(speaker, char) {
 }
 
 function showEnding() {
-    alert("ENDING");
+
+    document.querySelector(".dialogue-box").style.display = "none";
+
+    const endingScreen = document.getElementById("ending-screen");
+
+    endingScreen.style.opacity = "1";
+
 }
     
 const dialogue = [
