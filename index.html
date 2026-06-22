@@ -38,25 +38,44 @@
 
 const dialogue = [
     "???: Milady, you know that I don't usually question your plans, but I have to ask. What is your fixation with this pigment?",
-
     "???: It is not just a pigment, Archibald. It's the remains of life itself.",
-
     "Archibald: The closer we get to the origin... the more dangerous. It is basically suicide.",
-
     "???: I am aware of the risks."
 ];
 
-let currentLine = -1;
+let currentLine = 0;
+let isTyping = false;
+let charIndex = 0;
+
+const box = document.getElementById("dialogue");
+
+function typeLine(text) {
+    isTyping = true;
+    charIndex = 0;
+    box.textContent = "";
+
+    function typeChar() {
+        if (charIndex < text.length) {
+            box.textContent += text.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeChar, 25); // speed of typing
+        } else {
+            isTyping = false;
+        }
+    }
+
+    typeChar();
+}
 
 document.addEventListener("keydown", function(event) {
 
     if (event.code === "Space") {
 
-        currentLine++;
+        if (isTyping) return; // prevents skipping mid-type
 
         if (currentLine < dialogue.length) {
-            document.getElementById("dialogue").textContent =
-                dialogue[currentLine];
+            typeLine(dialogue[currentLine]);
+            currentLine++;
         }
 
     }
