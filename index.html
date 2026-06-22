@@ -53,6 +53,7 @@
 
 const miladyAudio = new Audio("Milady.mp3");
 const archibaldAudio = new Audio("Archibald.mp3");
+const endingMusic = new Audio("ending.mp3");
 
 function playSoundForSpeaker(speaker, char) {
 
@@ -81,6 +82,16 @@ function playSoundForSpeaker(speaker, char) {
     sound.playbackRate = 0.95 + Math.random() * 0.1;
 
     sound.play();
+}
+
+function showEnding() {
+
+    document.querySelector(".dialogue-box").style.display = "none";
+
+    document.getElementById("ending-screen").style.display = "block";
+
+    endingMusic.volume = 0.6;
+    endingMusic.play();
 }
     
 const dialogue = [
@@ -154,9 +165,15 @@ document.addEventListener("keydown", function(event) {
         }
 
         if (currentLine < dialogue.length) {
-            typeLine(dialogue[currentLine]);
-            currentLine++;
-        }
+
+    typeLine(dialogue[currentLine]);
+    currentLine++;
+
+} else {
+
+    showEnding();
+
+}
     }
 });
 
