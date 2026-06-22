@@ -86,8 +86,14 @@ function typeLine(lineObj) {
 
         if (charIndex < fullText.length) {
             box.textContent += fullText.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeChar, 25);
+charIndex++;
+
+// 🔊 play sound
+const sound = bips[Math.floor(Math.random() * bips.length)];
+sound.currentTime = 0;
+sound.play();
+
+setTimeout(typeChar, 25);
         } else {
             isTyping = false;
         }
