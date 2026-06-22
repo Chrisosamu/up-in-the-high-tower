@@ -46,6 +46,7 @@ const dialogue = [
 let currentLine = 0;
 let isTyping = false;
 let charIndex = 0;
+let skipTyping = false;
 
 const box = document.getElementById("dialogue");
 
@@ -55,10 +56,18 @@ function typeLine(text) {
     box.textContent = "";
 
     function typeChar() {
+
+        if (skipTyping) {
+            box.textContent = text;
+            isTyping = false;
+            skipTyping = false;
+            return;
+        }
+
         if (charIndex < text.length) {
             box.textContent += text.charAt(charIndex);
             charIndex++;
-            setTimeout(typeChar, 25); // speed of typing
+            setTimeout(typeChar, 25);
         } else {
             isTyping = false;
         }
@@ -71,7 +80,12 @@ document.addEventListener("keydown", function(event) {
 
     if (event.code === "Space") {
 
-        if (isTyping) return; // prevents skipping mid-type
+        event.preventDefault();
+
+        if (isTyping) {
+            skipTyping = true;
+            return;
+        }
 
         if (currentLine < dialogue.length) {
             typeLine(dialogue[currentLine]);
