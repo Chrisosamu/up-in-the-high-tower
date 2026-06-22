@@ -50,7 +50,10 @@ function playSoundForSpeaker(speaker) {
     }
 
     const sound = new Audio(src);
-    sound.volume = 0.6; // optional: softer
+
+    sound.volume = 0.25; // softer = more “Undertale-like”
+    sound.playbackRate = 0.95 + Math.random() * 0.1; // tiny variation
+
     sound.play();
 }
     
