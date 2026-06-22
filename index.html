@@ -35,19 +35,19 @@
 </div>
 
 <div id="ending-screen" style="
-    display:none;
+    opacity:0;
+    pointer-events:none;
+
     position:fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
+
+    background:black;
+
+    transition:opacity 2s ease;
 ">
-    <img src="ending.png" style="
-        width:100%;
-        height:100%;
-        object-fit: contain;
-        background: black;
-    ">
 </div>
 
 <script>
@@ -89,10 +89,17 @@ function showEnding() {
 
     document.querySelector(".dialogue-box").style.display = "none";
 
-    document.getElementById("ending-screen").style.display = "block";
+    const endingScreen = document.getElementById("ending-screen");
 
-    endingMusic.volume = 0.6;
-    endingMusic.play();
+    setTimeout(() => {
+
+        endingScreen.style.opacity = "1";
+
+        endingMusic.volume = 0.5;
+        endingMusic.play();
+
+    }, 2000);
+
 }
     
 const dialogue = [
