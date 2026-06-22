@@ -116,7 +116,7 @@ function typeLine(lineObj) {
 charIndex++;
 
 // 🔊 sound per letter
-playSoundForSpeaker(lineObj.speaker);
+playSoundForSpeaker(lineObj.speaker, fullText.charAt(charIndex));
 setTimeout(typeChar, 25);
         } else {
             isTyping = false;
