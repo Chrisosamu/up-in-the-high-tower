@@ -102,6 +102,25 @@ setTimeout(typeChar, 25);
     typeChar();
 }
 
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.code === "Space") {
+
+        event.preventDefault();
+
+        if (isTyping) {
+            skipTyping = true;
+            return;
+        }
+
+        if (currentLine < dialogue.length) {
+            typeLine(dialogue[currentLine]);
+            currentLine++;
+        }
+    }
+});
+
 </script>
 
 </body>
