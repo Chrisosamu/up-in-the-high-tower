@@ -92,23 +92,12 @@ function typeLine(lineObj) {
 }
 
 document.addEventListener("keydown", function(event) {
-
-    if (event.code === "Space") {
-
-        event.preventDefault();
-
-        if (isTyping) {
-            skipTyping = true;
-            return;
-        }
-
-        if (currentLine < dialogue.length) {
-            typeLine(dialogue[currentLine]);
-            currentLine++;
-        }
-
+    if (event.code === "KeyP") {
+        const test = new Audio("Milady's Voice.mp3");
+        test.currentTime = 0;
+        test.play();
+        console.log("BIP TEST");
     }
-
 });
 
 </script>
