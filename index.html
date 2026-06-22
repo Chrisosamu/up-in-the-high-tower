@@ -101,23 +101,25 @@ function showEnding() {
 
         endingScreen.style.opacity = "1";
 
-       endingMusic.volume = 0;
-endingMusic.play();
+        endingMusic.volume = 0;
+        endingMusic.play();
 
-let volume = 0;
+        let volume = 0;
 
-const fadeIn = setInterval(() => {
+        const fadeIn = setInterval(() => {
 
-    volume += 0.02;
+            volume += 0.02;
 
-    if (volume >= 0.5) {
-        volume = 0.5;
-        clearInterval(fadeIn);
-    }
+            if (volume >= 0.5) {
+                volume = 0.5;
+                clearInterval(fadeIn);
+            }
 
-    endingMusic.volume = volume;
+            endingMusic.volume = volume;
 
-}, 100);
+        }, 100);
+
+    }, 2000);
 
 }
     
