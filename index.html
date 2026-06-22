@@ -63,22 +63,24 @@ let skipTyping = false;
 
 const box = document.getElementById("dialogue");
 
-function typeLine(text) {
+function typeLine(lineObj) {
     isTyping = true;
     charIndex = 0;
     box.textContent = "";
 
+    const fullText = lineObj.speaker + ": " + lineObj.text;
+
     function typeChar() {
 
         if (skipTyping) {
-            box.textContent = text;
+            box.textContent = fullText;
             isTyping = false;
             skipTyping = false;
             return;
         }
 
-        if (charIndex < text.length) {
-            box.textContent += text.charAt(charIndex);
+        if (charIndex < fullText.length) {
+            box.textContent += fullText.charAt(charIndex);
             charIndex++;
             setTimeout(typeChar, 25);
         } else {
