@@ -37,10 +37,23 @@
 <script>
 
 const dialogue = [
-    "???: Milady, you know that I don't usually question your plans, but I have to ask. What is your fixation with this pigment?",
-    "???: It is not just a pigment, Archibald. It's the remains of life itself.",
-    "Archibald: The closer we get to the origin... the more dangerous. It is basically suicide.",
-    "???: I am aware of the risks."
+    { speaker: "???", text: "Milady, you know that I don't usually question your plans but, I have to ask. What is your fixation with this pigment?" },
+
+    { speaker: "???", text: "It is not just a pigment, Archibald. It's the remains of life itself. We're traveling back to collect dust of what was broken long ago. If we can't prevent the Tragedy, we shall at least fix it." },
+
+    { speaker: "Archibald", text: "...The closer we get to the origin... the more dangerous. It is basically suicide." },
+
+    { speaker: "???", text: "I am aware of the risks. I am not forcing you to come with me but... wouldn't it be nice to see your daughter again?" },
+
+    { speaker: "Archibald", text: "If we should be successful in bringing them all back... I sincerely doubt I will be there to see my daughter smile once again." },
+
+    { speaker: "Archibald", text: "Though, her life is way more important than mine." },
+
+    { speaker: "???", text: "So whaddaya say? One last mission together... friend?" },
+
+    { speaker: "Archibald", text: "I shall serve you and no other, Milady." },
+
+    { speaker: "???", text: "Ahah, very well then." }
 ];
 
 let currentLine = 0;
