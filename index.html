@@ -29,8 +29,41 @@
 </head>
 
 <body>
-    <div class="dialogue-box">
-        ???: Milady, you know that I don't usually question your plans, but I have to ask. What is your fixation with this pigment?
-    </div>
+
+<div class="dialogue-box" id="dialogue">
+    Press Space to begin.
+</div>
+
+<script>
+
+const dialogue = [
+    "???: Milady, you know that I don't usually question your plans, but I have to ask. What is your fixation with this pigment?",
+
+    "???: It is not just a pigment, Archibald. It's the remains of life itself.",
+
+    "Archibald: The closer we get to the origin... the more dangerous. It is basically suicide.",
+
+    "???: I am aware of the risks."
+];
+
+let currentLine = -1;
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.code === "Space") {
+
+        currentLine++;
+
+        if (currentLine < dialogue.length) {
+            document.getElementById("dialogue").textContent =
+                dialogue[currentLine];
+        }
+
+    }
+
+});
+
+</script>
+
 </body>
 </html>
