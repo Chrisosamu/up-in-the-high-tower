@@ -36,10 +36,22 @@
 
 <script>
 
-const bip1 = new Audio("Milady.mp3");
-const bip2 = new Audio("Archibald.mp3");
+const miladyAudio = new Audio("Milady.mp3");
+const archibaldAudio = new Audio("Archibald.mp3");
 
-const bips = [bip1, bip2];
+function playSoundForSpeaker(speaker) {
+
+    let sound;
+
+    if (speaker === "Archibald") {
+        sound = archibaldAudio;
+    } else {
+        sound = miladyAudio; // ??? = Milady
+    }
+
+    sound.currentTime = 0;
+    sound.play();
+}
     
 const dialogue = [
     { speaker: "???", text: "Milady, you know that I don't usually question your plans but, I have to ask. What is your fixation with this pigment?" },
@@ -89,10 +101,7 @@ function typeLine(lineObj) {
 charIndex++;
 
 // 🔊 sound per letter
-const sound = bips[Math.floor(Math.random() * bips.length)];
-sound.currentTime = 0;
-sound.play();
-
+playSoundForSpeaker(lineObj.speaker);
 setTimeout(typeChar, 25);
         } else {
             isTyping = false;
