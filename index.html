@@ -36,6 +36,11 @@
 
 <script>
 
+const bip1 = new Audio("Milady's Voice.mp3");
+const bip2 = new Audio("Archibald Voice.mp3");
+
+const bips = [bip1, bip2];
+    
 const dialogue = [
     { speaker: "???", text: "Milady, you know that I don't usually question your plans but, I have to ask. What is your fixation with this pigment?" },
 
@@ -90,15 +95,6 @@ function typeLine(lineObj) {
 
     typeChar();
 }
-
-document.addEventListener("keydown", function(event) {
-    if (event.code === "KeyP") {
-        const test = new Audio("Milady's Voice.mp3");
-        test.currentTime = 0;
-        test.play();
-        console.log("BIP TEST");
-    }
-});
 
 </script>
 
