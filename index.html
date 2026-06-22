@@ -92,35 +92,7 @@ function playSoundForSpeaker(speaker, char) {
 }
 
 function showEnding() {
-
-    document.querySelector(".dialogue-box").style.display = "none";
-
-    const endingScreen = document.getElementById("ending-screen");
-
-    setTimeout(() => {
-
-        endingScreen.style.opacity = "1";
-
-        endingMusic.volume = 0;
-        endingMusic.play();
-
-        let volume = 0;
-
-        const fadeIn = setInterval(() => {
-
-            volume += 0.02;
-
-            if (volume >= 0.5) {
-                volume = 0.5;
-                clearInterval(fadeIn);
-            }
-
-            endingMusic.volume = volume;
-
-        }, 100);
-
-    }, 2000);
-
+    alert("ENDING");
 }
     
 const dialogue = [
