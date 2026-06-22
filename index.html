@@ -39,7 +39,18 @@
 const miladyAudio = new Audio("Milady.mp3");
 const archibaldAudio = new Audio("Archibald.mp3");
 
-function playSoundForSpeaker(speaker) {
+function playSoundForSpeaker(speaker, char) {
+
+    // silence rules
+    if (
+        char === "." ||
+        char === "," ||
+        char === "!" ||
+        char === "?" ||
+        char === " "
+    ) {
+        return;
+    }
 
     let src;
 
@@ -51,8 +62,8 @@ function playSoundForSpeaker(speaker) {
 
     const sound = new Audio(src);
 
-    sound.volume = 0.25; // softer = more “Undertale-like”
-    sound.playbackRate = 0.95 + Math.random() * 0.1; // tiny variation
+    sound.volume = 0.25;
+    sound.playbackRate = 0.95 + Math.random() * 0.1;
 
     sound.play();
 }
