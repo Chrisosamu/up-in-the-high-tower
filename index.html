@@ -173,15 +173,36 @@ function typeLine(lineObj) {
         }
 
         if (charIndex < fullText.length) {
-            box.textContent += fullText.charAt(charIndex);
-charIndex++;
 
-// 🔊 sound per letter
-playSoundForSpeaker(lineObj.speaker, fullText.charAt(charIndex));
-setTimeout(typeChar, 40);
-        } else {
-            isTyping = false;
-        }
+    const currentChar = fullText.charAt(charIndex);
+
+    box.textContent += currentChar;
+
+    playSoundForSpeaker(lineObj.speaker, currentChar);
+
+    charIndex++;
+
+    let delay = 40;
+
+    if (currentChar === ",")
+        delay = 150;
+
+    if (currentChar === ".")
+        delay = 250;
+
+    if (currentChar === "!")
+        delay = 180;
+
+    if (currentChar === "?")
+        delay = 180;
+
+    setTimeout(typeChar, delay);
+
+} else {
+
+    isTyping = false;
+
+}
     }
 
     typeChar();
