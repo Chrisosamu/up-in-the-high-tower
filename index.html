@@ -109,23 +109,44 @@ function showEnding() {
 }
     
 const dialogue = [
-    { speaker: "Archibald", text: "Milady, you know that I don't usually question your plans but, I have to ask. What is your fixation with this pigment?" },
 
-    { speaker: "???", text: "It is not just a pigment, Archibald. It's the remains of life itself. We're traveling back to collect dust of what was broken long ago. If we can't prevent the Tragedy, we shall at least fix it." },
+    { speaker: "Archibald", text: "Milady, you know that I don't usually question your plans but..." },
+    { speaker: "Archibald", text: "I have to ask." },
+    { speaker: "Archibald", text: "...What is your fixation with this pigment?" },
 
-    { speaker: "Archibald", text: "...The closer we get to the origin... the more dangerous. It is basically suicide." },
+    { speaker: "???", text: "It is not just a pigment, Archibald." },
+    { speaker: "???", text: "It is the remains of life itself." },
+    { speaker: "???", text: "We're traveling back to collect the dust of what was broken long ago..." },
+    { speaker: "???", text: "If we can't prevent the Tragedy..." },
+    { speaker: "???", text: "...then at least..." },
+    { speaker: "???", text: "...we should fix it." },
 
-    { speaker: "???", text: "I am aware of the risks. I am not forcing you to come with me but... wouldn't it be nice to see your daughter again?" },
+    { speaker: "Archibald", text: "..." },
+    { speaker: "Archibald", text: "\"Far closer to the origin...\"" },
+    { speaker: "Archibald", text: "\"That's where the evil lies.\"" },
+    { speaker: "Archibald", text: "It is basically suicide." },
 
-    { speaker: "Archibald", text: "If we should be successful in bringing them all back... I sincerely doubt I will be there to see my daughter smile once again." },
+    { speaker: "???", text: "I am aware of the risks." },
 
-    { speaker: "Archibald", text: "Though, her life is way more important than mine." },
+    { speaker: "Archibald", text: "..." },
 
-    { speaker: "???", text: "So whaddaya say? One last mission together... friend?" },
+    { speaker: "???", text: "I'm not forcing you to come with me..." },
+    { speaker: "???", text: "But wouldn't it be nice to see your daughter again?" },
+
+    { speaker: "Archibald", text: "Heh." },
+    { speaker: "Archibald", text: "If we should be successful in bringing them all back..." },
+    { speaker: "Archibald", text: "I... do not think I will get to see my daughter... Milady." },
+    { speaker: "Archibald", text: "Though her life is far more important than mine." },
+
+    { speaker: "???", text: "Whaddaya say then?" },
+    { speaker: "???", text: "One last mission together, friend?" },
 
     { speaker: "Archibald", text: "I shall serve you and no other, Milady." },
 
-    { speaker: "???", text: "Ahah, very well then." }
+    { speaker: "???", text: "Hehe, very well!" },
+    { speaker: "???", text: "Next step..." },
+    { speaker: "???", text: "Luxia." }
+
 ];
 
 let currentLine = 0;
@@ -157,7 +178,7 @@ charIndex++;
 
 // 🔊 sound per letter
 playSoundForSpeaker(lineObj.speaker, fullText.charAt(charIndex));
-setTimeout(typeChar, 25);
+setTimeout(typeChar, 40);
         } else {
             isTyping = false;
         }
