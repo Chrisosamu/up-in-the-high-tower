@@ -187,8 +187,18 @@ function typeLine(lineObj) {
     if (currentChar === ",")
         delay = 150;
 
-    if (currentChar === ".")
+    if (currentChar === ".") {
+
+    if (
+        fullText.charAt(charIndex) === "." ||
+        fullText.charAt(charIndex - 2) === "."
+    ) {
+        delay = 120;
+    } else {
         delay = 250;
+    }
+
+}
 
     if (currentChar === "!")
         delay = 180;
