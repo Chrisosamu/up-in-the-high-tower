@@ -162,6 +162,7 @@ function typeLine(lineObj) {
     box.textContent = "";
 
     const fullText = lineObj.speaker + ": " + lineObj.text;
+    const dialogueStart = lineObj.speaker.length + 2;
 
     function typeChar() {
 
@@ -178,7 +179,9 @@ function typeLine(lineObj) {
 
     box.textContent += currentChar;
 
+    if (charIndex >= dialogueStart) {
     playSoundForSpeaker(lineObj.speaker, currentChar);
+}
 
     charIndex++;
 
